@@ -1,5 +1,23 @@
-<p>
-  full-dashboard works!
-</p>
+<mat-toolbar class="fixed-header" color="primary">
+  <mat-toolbar-row>
+    <span>{{ enumApplication.NAME }}</span>
+    <span class="fill-remaining"></span>
+    <span>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item>Settings</button>
+        <button mat-menu-item>Help</button>
+      </mat-menu>
 
-<router-outlet></router-outlet>
+      <button mat-icon-button [matMenuTriggerFor]="appMenu">
+        <mat-icon>settings</mat-icon>
+      </button>
+    </span>
+  </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container class="nav-container">
+  <mat-sidenav mode="side" opened>Sidebar</mat-sidenav>
+  <mat-sidenav-content>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
