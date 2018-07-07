@@ -13,6 +13,7 @@ import { appRoutes } from './app.routing';
 import { LayoutModule } from '../layout/layout.module';
 
 import { environment } from '../environments/environment';
+import { ServiceWorkerModule } from '@angular/service-worker';
 
 @NgModule({
   declarations: [AppComponent],
@@ -25,7 +26,9 @@ import { environment } from '../environments/environment';
     AngularFirestoreModule,
     AngularFireStorageModule,
 
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+
+    ServiceWorkerModule.register('/ngsw-worker.js', { enabled: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
