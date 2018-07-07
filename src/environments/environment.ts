@@ -4,5 +4,13 @@
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebase: {
+    apiKey: 'AIzaSyDIqGnrv-p0FN65MOwbqBNQuY1AMZ4SLO4',
+    authDomain: 'possum-cam.firebaseapp.com',
+    databaseURL: 'https://possum-cam.firebaseio.com',
+    projectId: 'possum-cam',
+    storageBucket: 'possum-cam.appspot.com',
+    messagingSenderId: '250014985953'
+  }
 };
