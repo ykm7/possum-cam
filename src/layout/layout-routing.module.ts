@@ -1,10 +1,10 @@
 import { Routes } from '@angular/router';
 
-import { PageNotFoundComponent } from '../layout/simple-pages/page-not-found/page-not-found.component';
-import { FullDashboardComponent } from '../layout/full-dashboard/full-dashboard.component';
-import { SimpleDashboardComponent } from '../layout/simple-dashboard/simple-dashboard.component';
+import { PageNotFoundComponent } from './simple-pages/page-not-found/page-not-found.component';
+import { FullDashboardComponent } from './full-dashboard/full-dashboard.component';
+import { SimpleDashboardComponent } from './simple-dashboard/simple-dashboard.component';
 
-export const appRoutes: Routes = [
+export const layoutRoutes: Routes = [
   {
     path: '',
     component: FullDashboardComponent
