@@ -14,7 +14,7 @@ export class CoreModule {
     return {
       ngModule: CoreModule,
       providers: [
-        service.AuthenticationService
+        service.AccountService
       ]
     };
   }

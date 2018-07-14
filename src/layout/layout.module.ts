@@ -2,12 +2,20 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
-import { MatMenuModule } from '@angular/material/menu';
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
-import { MatButtonModule } from '@angular/material/button';
-import { MatSidenavModule } from '@angular/material/sidenav';
+import {
+  MatMenuModule,
+  MatToolbarModule,
+  MatIconModule,
+  MatButtonModule,
+  MatSidenavModule,
+  MatFormFieldModule,
+  MatCardModule,
+  MatDividerModule,
+  MatInputModule,
+  MatAutocompleteModule
+} from '@angular/material';
 
 import { FullDashboardComponent } from './full-dashboard/full-dashboard.component';
 import { SimpleDashboardComponent } from './simple-dashboard/simple-dashboard.component';
@@ -19,11 +27,22 @@ import { LoginComponent } from './simple-pages/login/login.component';
   imports: [
     CommonModule,
     BrowserAnimationsModule,
+
+    FormsModule,
+    ReactiveFormsModule,
+
+    // Angular Materials
     MatToolbarModule,
     MatMenuModule,
     MatIconModule,
     MatButtonModule,
     MatSidenavModule,
+    MatFormFieldModule,
+    MatCardModule,
+    MatDividerModule,
+    MatInputModule,
+    MatAutocompleteModule,
+
     RouterModule.forChild(layoutRoutes)
   ],
   declarations: [

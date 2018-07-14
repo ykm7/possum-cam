@@ -1,0 +1,28 @@
+.wrapper {
+  display: flex;
+  justify-content: space-around;
+
+  /* flex: 1 1 100%; */
+}
+
+.wrapper .login-card {
+    flex: 1 1 100%;
+}
+
+mat-card-content {
+  padding: 1rem 0px 0px 0px;
+  margin: 0px;
+}
+
+.wrapper .form-class {
+  display: flex;
+  flex-direction: column;
+}
+
+.wrapper .form-class > * {
+  flex: 1 1 100%;
+}
+
+.wrapper .form-class > *:last-of-type {
+  margin-bottom: 0px;
+}

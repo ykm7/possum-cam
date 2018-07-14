@@ -4,14 +4,14 @@ import { PageNotFoundComponent } from './simple-pages/page-not-found/page-not-fo
 import { FullDashboardComponent } from './full-dashboard/full-dashboard.component';
 import { SimpleDashboardComponent } from './simple-dashboard/simple-dashboard.component';
 import { LoginComponent } from './simple-pages/login/login.component';
+import { AuthGuard } from '../core/guard/auth-guard.service';
 
 export const layoutRoutes: Routes = [
   {
     path: '',
-    component: FullDashboardComponent
-    // children: [
-
-    // ]
+    component: FullDashboardComponent,
+    canActivate: [AuthGuard]
+    // children: [{}]
   },
   // {
   //   path: 'heroes',

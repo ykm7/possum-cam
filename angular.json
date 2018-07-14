@@ -54,8 +54,7 @@
           },
           "configurations": {
             "production": {
-              "browserTarget": "possum-cam:build:production",
-              "aot": true
+              "browserTarget": "possum-cam:build:production"
             }
           }
         },

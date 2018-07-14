@@ -1,0 +1,27 @@
+.wrapper {
+    display: flex;
+    /* flex-direction: column; */
+}
+
+.center {
+    flex: auto;
+}
+
+.fixed-header {
+  /* position: fixed;
+  top: 0;
+  left: 0;
+  margin: 2rem;
+  width: 100%; */
+  flex: auto;
+}
+
+.fixed-footer {
+  /* position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: 2rem;
+  width: 100%; */
+  flex: auto;
+}
