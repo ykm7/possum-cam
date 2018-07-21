@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Application } from '../../core/enum';
+import { AccountService } from '../../core/service';
 
 @Component({
   selector: 'app-full-dashboard',
@@ -9,7 +10,11 @@ import { Application } from '../../core/enum';
 export class FullDashboardComponent implements OnInit {
   public enumApplication = Application;
 
-  constructor() {}
+  constructor(private accountService: AccountService) {}
 
   ngOnInit() {}
+
+  public logout(): void {
+    this.accountService.logout();
+  }
 }

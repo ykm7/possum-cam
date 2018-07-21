@@ -29,4 +29,6 @@ export class LoginComponent implements OnInit {
       this.form.controls['password'].value
     );
   }
+
+  public register() {}
 }

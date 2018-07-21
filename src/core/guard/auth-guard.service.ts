@@ -10,15 +10,14 @@ import {
 } from '@angular/router';
 
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { map, take, tap } from 'rxjs/operators';
 
 import { AccountService } from '../service/account.service';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthGuard
-  implements CanActivate, CanActivateChild, CanLoad {
+export class AuthGuard implements CanActivate, CanActivateChild, CanLoad {
   constructor(private accountService: AccountService, private router: Router) {}
 
   canActivate(
@@ -44,23 +43,14 @@ export class AuthGuard
     state: RouterStateSnapshot
   ): Observable<boolean> {
     // returns true is a firebase user exists.
-    return (
-      this.accountService
-        .getAuthState$()
-        // .pipe(map(user => (user ? true : false)));
-        .pipe(
-          map(user => {
-            if (user) {
-              // Authorized
-              return true;
-            } else {
-              // Un-authorized
-              this.accountService.setRedirectUrl(state.url);
-              this.router.navigateByUrl('/login');
-              return false;
-            }
-          })
-        )
+    return this.accountService.getUser$().pipe(
+      take(1),
+      map(authState => !!authState),
+      tap(authState => {
+        if (!authState) {
+          this.router.navigate(['/login']);
+        }
+      })
     );
   }
 }

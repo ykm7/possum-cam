@@ -9,9 +9,17 @@ import { AuthGuard } from '../core/guard/auth-guard.service';
 export const layoutRoutes: Routes = [
   {
     path: '',
+    redirectTo: 'device',
+    pathMatch: 'full'
+  },
+  {
+    path: '',
     component: FullDashboardComponent,
-    canActivate: [AuthGuard]
-    // children: [{}]
+    canActivate: [AuthGuard],
+    children: [{
+      path: 'device',
+      loadChildren: '../device/device.module#DeviceModule'
+    }]
   },
   // {
   //   path: 'heroes',
